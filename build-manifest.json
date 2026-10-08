@@ -28,8 +28,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 3164,
-      "sha256": "da5b6c5ba9840ec590d852cdab4df1ba53f4257ad17f0118d2a9f01bf0d60341"
+      "bytes": 3381,
+      "sha256": "a3401d47a3a7ebd18cedbeafdbaff149ca2f67fce25eef53fd2cd5c7e29ae34e"
     },
     {
       "path": "modules/analytics-view.mjs",
@@ -158,8 +158,8 @@
     },
     {
       "path": "vocabulary.css",
-      "bytes": 10956,
-      "sha256": "d57f993007f879f3776564867bdd91a4c1fba96cfe7e6fd25939d56f478cc04d"
+      "bytes": 11283,
+      "sha256": "490c5be349e6509229d696f2991ef083229f2a940cc6605fcd79a656873d6e1c"
     }
   ]
 }
