@@ -10,6 +10,10 @@ const views = {
   settings: "settings",
   tutorial: "tutorial",
 };
+const viewVersions = {
+  tutorial: "20261009-tutorial-cleanup",
+  settings: "20261009-settings-cleanup",
+};
 const root = document.getElementById("view");
 let store,
   controller,
@@ -34,7 +38,8 @@ async function render() {
   controller = new AbortController();
   const signal = controller.signal;
   const route = location.hash.slice(1).split("/")[0] || "home",
-    view = views[route] || "home";
+    view = views[route] || "home",
+    revision = viewVersions[view];
   root.innerHTML = '<p role="status">正在读取本地学习记录…</p>';
   document.querySelectorAll("[data-nav]").forEach((a) => {
     if (a.dataset.nav === view) a.setAttribute("aria-current", "page");
@@ -45,7 +50,7 @@ async function render() {
       store.preferences(),
       store.all("collections"),
       import(
-        `./modules/${view}-view.mjs${view === "tutorial" ? "?v=20261009-tutorial-cleanup" : ""}`
+        `./modules/${view}-view.mjs${revision ? `?v=${revision}` : ""}`,
       ),
     ]);
     if (version !== generation) return;

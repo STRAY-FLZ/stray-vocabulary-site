@@ -8,8 +8,8 @@
     },
     {
       "path": "app.mjs",
-      "bytes": 4356,
-      "sha256": "80cad3e8dfea0e3f5369bb067ddd55fe0f714f7c18be4dc56930c32b64ad8a48"
+      "bytes": 4475,
+      "sha256": "69b468b7675e93c99a17c3e95b9efd24cd2252e366260179a8401750b1d05ec0"
     },
     {
       "path": "assets/highlight-vocabulary-prompt.txt",
@@ -34,7 +34,7 @@
     {
       "path": "index.html",
       "bytes": 3478,
-      "sha256": "ea6084f645574240d387a7f26bb1b7822d97e756a3bc16b9a49ded4b1b6c7c1e"
+      "sha256": "1e28b4572ea3261bef10c3d9fa635cdda40d269bcbabc8c98db28ad3b01b1629"
     },
     {
       "path": "modules/analytics-view.mjs",
@@ -123,8 +123,8 @@
     },
     {
       "path": "modules/settings-view.mjs",
-      "bytes": 5817,
-      "sha256": "77f8c1b9802e0c92b66a28f5e383ff24e708da2e6a97f32fc3e2162e266a94f7"
+      "bytes": 5308,
+      "sha256": "6bbebff59eacffae55c800a11085f2d223e475edea25c0adb657f2f61382b0b5"
     },
     {
       "path": "modules/storage.mjs",
