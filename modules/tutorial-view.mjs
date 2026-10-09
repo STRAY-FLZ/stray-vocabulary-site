@@ -22,7 +22,7 @@ export async function render(ctx) {
         <li><h3>让视觉模型生成 TXT</h3><p>使用 <a href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">GLM 5.3-flash ↗</a>、DeepSeek v4.1flash、GPT 等具有视觉理解能力的模型。上传图片，复制下方完整指令，让模型生成词库 TXT 文件。</p></li>
         <li><h3>创建词库并导入</h3><p>保存好 TXT 文件，在本网站<a href="#library">“我的词库”</a>中点击“创建词库”并填写名称。随后点击“导入 TXT”，选择目标词库、上传文件，检查导入预览，最后点击“确认保存有效词条”，即可开始学习。</p></li>
       </ol>
-      <div class="actions"><a class="button primary" href="#library">前往我的词库 →</a></div>
+      <div class="actions"><a class="tutorial-library-link" href="#library">前往我的词库 →</a></div>
     </section>
     <aside class="panel tutorial-warning" aria-labelledby="tutorial-backup">
       <h2 id="tutorial-backup">注意：不要清除网站的浏览器数据</h2>

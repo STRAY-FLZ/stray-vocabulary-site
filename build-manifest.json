@@ -133,8 +133,8 @@
     },
     {
       "path": "modules/tutorial-view.mjs",
-      "bytes": 4241,
-      "sha256": "1f6036a796b3ff1f720cd7295e21e0dbae3d91cd032c6419c20672f03d87cdf0"
+      "bytes": 4248,
+      "sha256": "b2c4f501c64a3b706fefe530dd43441bcefdf771b3bef28888c801f3a487ea89"
     },
     {
       "path": "modules/ui.mjs",
@@ -168,8 +168,8 @@
     },
     {
       "path": "vocabulary.css",
-      "bytes": 12122,
-      "sha256": "7245abe9329cef79de1e3870bdb2e6ccd1bac1a64a2e26e739f6c0153660958f"
+      "bytes": 12391,
+      "sha256": "71cbcbaf5a2d4ce8fd91fb4cb2e98c6af9ad2827cadce9eb309c5fe7655dd747"
     }
   ]
 }
