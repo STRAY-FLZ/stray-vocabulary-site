@@ -8,6 +8,7 @@ const views = {
   import: "import",
   analytics: "analytics",
   settings: "settings",
+  tutorial: "tutorial",
 };
 const root = document.getElementById("view");
 let store,

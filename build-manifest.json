@@ -8,8 +8,13 @@
     },
     {
       "path": "app.mjs",
-      "bytes": 4256,
-      "sha256": "ff1f9093bc3716c05e5d42b309f619c6427223cd98f384a00459beb57f7a3c7f"
+      "bytes": 4280,
+      "sha256": "ca0d7cabc8e1f5790433a926cf9f1bca94fa2c5c4ff62b102e08070b81eaddc9"
+    },
+    {
+      "path": "assets/highlight-vocabulary-prompt.txt",
+      "bytes": 8181,
+      "sha256": "3478123dddadd4fd50be34640d996263090d7d0bff0562c6533873ad851ab5d3"
     },
     {
       "path": "assets/icons/night-symbol.png",
@@ -28,8 +33,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 3381,
-      "sha256": "a3401d47a3a7ebd18cedbeafdbaff149ca2f67fce25eef53fd2cd5c7e29ae34e"
+      "bytes": 3450,
+      "sha256": "6ec6e807ccda13b286682e5548f9330ad6d5a0ed24ed0575ec768e9427c2b0ce"
     },
     {
       "path": "modules/analytics-view.mjs",
@@ -127,6 +132,11 @@
       "sha256": "557b3c33191ba7dd9ef5e297ee9e8d6239103f7925ef3e3fb1ebc4353daec5c9"
     },
     {
+      "path": "modules/tutorial-view.mjs",
+      "bytes": 4241,
+      "sha256": "1f6036a796b3ff1f720cd7295e21e0dbae3d91cd032c6419c20672f03d87cdf0"
+    },
+    {
       "path": "modules/ui.mjs",
       "bytes": 3962,
       "sha256": "1f9e0cd521a2b710ea3dfa3f1795be78cb324cc4180a07413366ea8a3ab95c1f"
@@ -158,8 +168,8 @@
     },
     {
       "path": "vocabulary.css",
-      "bytes": 11523,
-      "sha256": "437beea28153201e494f3772a91ec68e71cd5d44707efa1657214c6a484172e8"
+      "bytes": 12122,
+      "sha256": "7245abe9329cef79de1e3870bdb2e6ccd1bac1a64a2e26e739f6c0153660958f"
     }
   ]
 }
