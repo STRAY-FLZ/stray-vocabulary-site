@@ -76,18 +76,6 @@
 .vocabulary-app .tutorial-warning {
   border-left: 4px solid var(--accent);
 }
-.vocabulary-app .tutorial-library-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.8rem 1.2rem;
-  border: 1px solid #000;
-  border-radius: 3px;
-  background: #fff;
-  color: #284b79;
-  font-weight: 700;
-}
 .tutorial-intro a,
 .tutorial-steps a,
 .tutorial-warning p a {

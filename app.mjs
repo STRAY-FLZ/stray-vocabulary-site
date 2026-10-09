@@ -44,7 +44,9 @@ async function render() {
     const [prefs, collections, module] = await Promise.all([
       store.preferences(),
       store.all("collections"),
-      import(`./modules/${view}-view.mjs`),
+      import(
+        `./modules/${view}-view.mjs${view === "tutorial" ? "?v=20261009-tutorial-cleanup" : ""}`
+      ),
     ]);
     if (version !== generation) return;
     const ctx = {
