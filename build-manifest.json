@@ -88,8 +88,8 @@
     },
     {
       "path": "modules/library-view.mjs",
-      "bytes": 8491,
-      "sha256": "469ad270963a055d1560498db0248377481a180a3f50d1e260e5f64fd5e1b247"
+      "bytes": 9473,
+      "sha256": "fd2388aa3bc0f3fc20ddccb0975d99c945909e96d6c97d0b79be8ce1a6ea6d96"
     },
     {
       "path": "modules/model.mjs",
@@ -158,8 +158,8 @@
     },
     {
       "path": "vocabulary.css",
-      "bytes": 11283,
-      "sha256": "490c5be349e6509229d696f2991ef083229f2a940cc6605fcd79a656873d6e1c"
+      "bytes": 11523,
+      "sha256": "437beea28153201e494f3772a91ec68e71cd5d44707efa1657214c6a484172e8"
     }
   ]
 }

@@ -13,6 +13,7 @@ import {
 import { rankSenses } from "./ranking.mjs";
 export async function render(ctx) {
   let page = 0,
+    pageCount = 1,
     searchTimer,
     version = 0;
   ctx.mount(
@@ -33,8 +34,14 @@ export async function render(ctx) {
     const v = ++version;
     const r = await ctx.store.search(filters());
     if (v !== version || !ctx.alive()) return;
+    pageCount = Math.max(1, Math.ceil(r.total / r.pageSize));
+    if (page >= pageCount) {
+      page = pageCount - 1;
+      await list();
+      return;
+    }
     document.getElementById("word-list").innerHTML =
-      `<p>${r.total} 个词条 · 第 ${page + 1} / ${Math.max(1, Math.ceil(r.total / r.pageSize))} 页</p>${r.items.map((w) => `<article class="word-row"><div><button class="word-link" data-action="detail" data-word="${escape(w.wordId)}" lang="en">${escape(w.word)}</button> ${historyPriorityBadge(w)}<p>${escape(w.senses[0].definitionZH)}</p><span class="muted small">${w.senses.length} 个词义 · ${escape(w.examTags.join(" / "))} · ${w.studied ? "已学习" : "未学习"}</span></div>${bookmarkButton(w)}</article>`).join("") || "<p>当前范围没有词条，请调整筛选或导入词库。</p>"}<div class="actions">${button("上一页", "prev", page === 0 ? "disabled" : "")}${button("下一页", "more", (page + 1) * r.pageSize >= r.total ? "disabled" : "")}</div>`;
+      `<p>${r.total} 个词条 · 第 ${page + 1} / ${pageCount} 页</p>${r.items.map((w) => `<article class="word-row"><div><button class="word-link" data-action="detail" data-word="${escape(w.wordId)}" lang="en">${escape(w.word)}</button> ${historyPriorityBadge(w)}<p>${escape(w.senses[0].definitionZH)}</p><span class="muted small">${w.senses.length} 个词义 · ${escape(w.examTags.join(" / "))} · ${w.studied ? "已学习" : "未学习"}</span></div>${bookmarkButton(w)}</article>`).join("") || "<p>当前范围没有词条，请调整筛选或导入词库。</p>"}<form id="library-pagination" class="actions library-pagination">${button("上一页", "prev", page === 0 ? "disabled" : "")}<input id="library-page" name="pageNumber" type="number" inputmode="numeric" aria-label="跳转页码" title="输入页码后按回车跳转（1–${pageCount}）" min="1" max="${pageCount}" step="1" value="${page + 1}" required ${r.total === 0 ? "disabled" : ""}>${button("下一页", "more", page + 1 >= pageCount ? "disabled" : "")}</form>`;
   }
   ctx.on("input", 'input[name="query"]', () => {
     clearTimeout(searchTimer);
@@ -48,6 +55,18 @@ export async function render(ctx) {
     await list();
   });
   ctx.on("submit", "#library-filters", (e) => e.preventDefault());
+  ctx.on("submit", "#library-pagination", async (e, form) => {
+    e.preventDefault();
+    const requested = Number(form.elements.pageNumber.value);
+    if (!Number.isInteger(requested) || requested < 1 || requested > pageCount) {
+      ctx.notice(`请输入 1 至 ${pageCount} 之间的整数页码`, true);
+      return;
+    }
+    clearTimeout(searchTimer);
+    page = requested - 1;
+    await list();
+    document.getElementById("library-page")?.focus({ preventScroll: true });
+  });
   ctx.on("click", "[data-action]", async (_, node) => {
     const id = node.dataset.word,
       action = node.dataset.action;
@@ -61,11 +80,11 @@ export async function render(ctx) {
     if (action === "speak")
       await speak(await ctx.store.get("words", id), ctx.notice);
     if (action === "prev") {
-      page--;
+      page = Math.max(0, page - 1);
       await list();
     }
     if (action === "more") {
-      page++;
+      page = Math.min(pageCount - 1, page + 1);
       await list();
     }
     if (action === "close-detail") {
